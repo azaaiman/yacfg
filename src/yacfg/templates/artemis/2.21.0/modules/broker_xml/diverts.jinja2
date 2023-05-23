@@ -1,0 +1,22 @@
+{% from 'libs/utils.jinja2' import mbool without context %}
+{% if broker_xml.diverts is defined %}
+    <!-- Diverts configuration -->
+        <diverts>
+            {% for divert in broker_xml.diverts %}
+            <divert name="{{ divert.name }}">
+                {% if divert.routing_name is defined %}
+                <routing-name>{{ divert.routing_name }}</routing-name>
+                {% endif %}
+                <address>{{ divert.address }}</address>
+                <forwarding-address>{{ divert.forwarding_address }}</forwarding-address>
+                {% if divert.filter is defined %}
+                <filter string="{{ divert.filter }}"/>
+                {% endif %}
+                {% if divert.exclusive is defined %}
+                <exclusive>{{ mbool(divert.exclusive) }}</exclusive>
+                {% endif %}
+            </divert>
+            {% endfor %}
+        </diverts>
+
+{% endif %}
