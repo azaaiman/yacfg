@@ -1,0 +1,23 @@
+{% from '_libs/utils.jinja2' import mbool without context %}
+  diverts:
+{% if user_diverts is defined %}
+  {% for divert in user_diverts %}
+  - name: '{{ divert.name }}'
+  {% if divert.routing_name is defined %}
+    routing_name: {{ divert.routing_name }}
+  {% endif %}
+  {% if divert.address is defined %}
+    address: {{ divert.address }}
+  {% endif %}
+  {% if divert.filter is defined %}
+    filter: {{ divert.filter }}
+  {% endif %}
+  {% if divert.forwarding_address is defined %}
+    forwarding_address: {{ divert.forwarding_address }}
+  {% endif %}
+  {% if divert.exclusive is defined %}
+    exclusive: {{ mbool(divert.exclusive) }}
+  {% endif %}
+
+  {% endfor %}
+{% endif %}
