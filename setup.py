@@ -257,6 +257,7 @@ package_data = \
            'profiles/artemis/2.21.0/_modules/broker_xml/address_settings/*',
            'profiles/artemis/2.21.0/_modules/broker_xml/addresses/*',
            'profiles/artemis/2.21.0/_modules/broker_xml/cluster/*',
+           'profiles/artemis/2.21.0/_modules/broker_xml/diverts/*',
            'profiles/artemis/2.21.0/_modules/broker_xml/ha_policy/replication/*',
            'profiles/artemis/2.21.0/_modules/broker_xml/ha_policy/shared_store/*',
            'profiles/artemis/2.21.0/_modules/broker_xml/journal/*',
