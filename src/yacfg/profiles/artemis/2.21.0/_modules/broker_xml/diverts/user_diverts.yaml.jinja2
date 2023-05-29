@@ -1,6 +1,6 @@
 {% from '_libs/utils.jinja2' import mbool without context %}
-  diverts:
 {% if user_diverts is defined %}
+  diverts:
   {% for divert in user_diverts %}
   - name: '{{ divert.name }}'
   {% if divert.routing_name is defined %}
